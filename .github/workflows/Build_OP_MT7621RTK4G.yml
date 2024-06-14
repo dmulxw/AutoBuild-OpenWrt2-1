@@ -50,12 +50,12 @@ jobs:
         sudo -E apt-get clean
     - name: Clone source code
       env: 
-        REPO_URL: https://github.com/coolsnowwolf/lede
+        REPO_URL: https://github.com/dmulxw/lede
         REPO_BRANCH: master
       run: |
         git clone --depth 1 $REPO_URL -b $REPO_BRANCH openwrt
         cd openwrt
-        echo "src-git ssrp https://github.com/fw876/helloworld.git" >> ./feeds.conf.default
+        echo "src-git ssrp https://github.com/dmulxw/helloworldopenwrt.git" >> ./feeds.conf.default
         echo "src-git ntrip https://github.com/dmulxw/packages.git" >> ./feeds.conf.default
 
     - name: Update & Install feeds
@@ -63,8 +63,9 @@ jobs:
       run: |
         ./scripts/feeds update -a
         ./scripts/feeds install -a
-        ./scripts/feeds install -a
-        
+
+    #REPO_URL: https://github.com/coolsnowwolf/lede    
+    #echo "src-git ssrp https://github.com/fw876/helloworld.git" >> ./feeds.conf.default    
     #- name: Import external feeds - JerryKuKu Argon
     #  working-directory: ./openwrt
     #  run: |
