@@ -1,8 +1,9 @@
 #=================================================
 # Description: Build OpenWrt using GitHub Actions
 # Lisence: MIT
-# Author: eSirPlayground
-# Youtube Channel: https://goo.gl/fvkdwm 
+# Author: 
+# Youtube Channel:  
+# 修改了来源库
 #=================================================
 
 name: Build_MT7621和RTK4G
